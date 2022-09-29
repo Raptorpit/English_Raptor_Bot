@@ -1,7 +1,5 @@
 import sqlite3
 
-
-
 def register_user(user_id: int, username: str):
     session = sqlite3.connect('db/anglo_bot.db', check_same_thread=False)
     cursor = session.cursor()
@@ -63,4 +61,14 @@ def learned_words(user_id: int):
         cursor.close()
         session.close()
 
-
+def all_users_id():
+    session = sqlite3.connect('db/anglo_bot.db', check_same_thread=False)
+    cursor = session.cursor()
+    try:
+        cursor.execute('SELECT user_id FROM users')
+        b = cursor.fetchall()
+        return b
+    except sqlite3.Error as error:
+        print(error)
+        cursor.close()
+        session.close()

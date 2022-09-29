@@ -7,5 +7,6 @@ from main import bot
 def start_handler(message):
     bot.send_message(message.chat.id, 'Привет, я буду учить с тобой слова',reply_markup=keyboard.get_keyboard())
     us_id = message.from_user.id
+    users_id.append(us_id)
     username = message.from_user.username
     register_user(us_id, username)
