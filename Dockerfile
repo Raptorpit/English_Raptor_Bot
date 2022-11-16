@@ -8,7 +8,7 @@ COPY requirements.txt ./
 
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
-ENV TOKEN="5727015611:AAHt4kqyFU9Sw1xDPC7IktOtoM1fiAQHUcU"
+ENV TOKEN="token"
 
 RUN  apt-get update && apt-get install sqlite3
 
